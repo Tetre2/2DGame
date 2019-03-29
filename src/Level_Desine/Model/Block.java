@@ -84,12 +84,12 @@ public class Block extends Group {
 
     public void translateX(int x) {
         this.setTranslateX(x);
-        renderBlock();//TODO behövs kanske ej
+        renderBlock();
     }
 
     public void translateY(int y) {
         this.setTranslateY(y);
-        renderBlock();//TODO behövs kanske ej
+        renderBlock();
     }
 
     public int getPosX() {

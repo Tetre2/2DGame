@@ -6,27 +6,20 @@ import javafx.scene.Group;
 
 import java.util.ArrayList;
 
-public class RotatableBlock extends Group implements Rotatable {
+public class RotatableBlock extends Block implements Rotatable {
 
     private ArrayList<Block> blocks;
     private Block currentBlock;
-    private int size;
-    private int posX;
-    private int posY;
 
-    public RotatableBlock() {
+    public RotatableBlock(ArrayList<Sprite> sprites) {
+        super(sprites.get(0));
         blocks = new ArrayList<>();
-        add((new Brick(0,0)));
-        posX = 0;
-        posY = 0;
+        for (Sprite s: sprites) {
+            Block b = new Block(s);
+            blocks.add(b);
+        }
+        currentBlock = blocks.get(0);
         renderBlock();
-    }
-
-    public void add(Sprite b){
-        Block block = new Block(b);
-        blocks.add(block);
-
-        currentBlock = block;//TODO Ändra sedan
     }
 
 
@@ -38,11 +31,10 @@ public class RotatableBlock extends Group implements Rotatable {
 
     public void renderBlock() {
         this.getChildren().clear();
-        this.getChildren().add(this);
+        this.getChildren().add(currentBlock);
     }
 
     public void reSizeBlock(int size) {
-        this.size = size;
         for (Block b : blocks) {
             b.reSizeBlock(size);
         }
@@ -62,6 +54,10 @@ public class RotatableBlock extends Group implements Rotatable {
         renderBlock();//TODO behövs kanske ej
     }
 
+
+
+
+
     public Block getCurrentBlock() {
         return currentBlock;
     }
@@ -75,14 +71,14 @@ public class RotatableBlock extends Group implements Rotatable {
     }
 
     public int getSize() {
-        return size;
+        return currentBlock.getSize();
     }
 
     public int getPosX() {
-        return posX;
+        return currentBlock.getPosX();
     }
 
     public int getPosY() {
-        return posY;
+        return currentBlock.getPosY();
     }
 }

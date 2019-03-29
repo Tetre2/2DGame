@@ -9,13 +9,14 @@ import java.util.ArrayList;
 public class Sprites {
 
     public static RotatableBlock getBrickWalls(){
-        RotatableBlock b = new RotatableBlock();
+        ArrayList<Sprite> sprites = new ArrayList<>();
         for (int col = 0; col < 3; col++) {
             for (int row = 0; row < 4; row++) {
                 Brick brick = new Brick(row, col);
-                b.add(brick);
+                sprites.add(brick);
             }
         }
+        RotatableBlock b = new RotatableBlock(sprites);
         return b;
     }
 
