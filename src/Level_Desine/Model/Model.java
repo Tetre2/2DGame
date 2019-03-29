@@ -1,17 +1,26 @@
 package Level_Desine.Model;
 
-
-import Level_Desine.Main;
-import Level_Desine.Model.Sprites.None;
-import Level_Desine.Model.Sprites.Sprites;
-import javafx.scene.Group;
-
-import java.util.ArrayList;
+import Level_Desine.Model.Sprites.Blocks;
 
 public class Model {
 
+    private Canvas c;
+    private Pallet p;
+
     public Model(int size) {
+        c = new Canvas(size);
+        p = new Pallet();
+
+
+        p.add(Blocks.brickWall());
+
     }
 
+    public Pallet getPallet() {
+        return p;
+    }
 
+    public Canvas getCanvas() {
+        return c;
+    }
 }

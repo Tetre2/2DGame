@@ -1,5 +1,6 @@
 package Level_Desine.Model;
 
+import Level_Desine.Model.Sprites.Blocks;
 import Level_Desine.Model.Sprites.Sprite;
 import javafx.scene.Group;
 
@@ -21,48 +22,47 @@ public class Block extends Group {
         renderBlock();
     }
 
-    public Block(Block b){
-        this(b.getSprite(), b.getSize(), b.getPosX(), b.getPosY());
-    }
-
     public Block(Sprite sprite) {
         this(sprite, 0, 0, 0);
     }
 
+    /*public Block(Block b) {
+        this(b.sprite, b.size, b.getPosX(), b.getPosY());
+    }*/
+
     //--------------------------------
 
-    public void renderBlock(){
+    public void renderBlock() {
         this.getChildren().clear();
         this.getChildren().add(sprite);
     }
 
 
-    public Block changeBlock(Block b){
-        /*this.type = type;
-        imageView = Sprites.getImage(type);
-        reSizeBlock(size);*/
-        return new Block(b.getSprite(), size, posX, posY);
+    public void changeBlock(Sprite s) {
+        System.out.println("k");
+        this.sprite = new Sprite(s);
+        renderBlock();
     }
 
 
-    public void reSizeBlock(int size){
+    public void reSizeBlock(int size) {
         this.size = size;
-        if(size != 0){
+        if (size != 0) {
             sprite.reSizeX(size);
             sprite.reSizeY(size);
         }
         renderBlock();
     }
 
-    public void setIcon(){
+    public void setIcon() {
         reSizeBlock(100);
         renderBlock();
     }
 
     //--------------------------------
 
-
     public Sprite getSprite() {
+        //return new Sprite(sprite.getPath(), sprite.getSize(), sprite.getRow(), sprite.getCol());
         return sprite;
     }
 
@@ -70,11 +70,11 @@ public class Block extends Group {
         this.size = size;
     }
 
-    public int getWidth(){
+    public int getWidth() {
         return sprite.getWidth();
     }
 
-    public int getHeight(){
+    public int getHeight() {
         return sprite.getHeight();
     }
 

@@ -1,18 +1,16 @@
 package Level_Desine.Model;
 
-import Level_Desine.Model.Sprites.Brick;
 import Level_Desine.Model.Sprites.Sprite;
 import javafx.scene.Group;
 
 import java.util.ArrayList;
 
-public class RotatableBlock extends Block implements Rotatable {
+public class RotatableBlock extends Group implements Rotatable {
 
     private ArrayList<Block> blocks;
     private Block currentBlock;
 
     public RotatableBlock(ArrayList<Sprite> sprites) {
-        super(sprites.get(0));
         blocks = new ArrayList<>();
         for (Sprite s: sprites) {
             Block b = new Block(s);
