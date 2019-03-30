@@ -1,18 +1,19 @@
 package Level_Desine.Model.Sprites;
 
+import Level_Desine.Model.Sprites.AllSprites.ERR;
+import Level_Desine.Model.Sprites.AllSprites.None;
 import Level_Desine.Type;
 
 public class Sprites {
 
-    private static String pathRand = "file:Resources/RAND16.png";
     private static String pathBrickWall = "file:Resources/Brick128Wall.png";
 
     public static Sprite None(){
-        return new Sprite(pathRand, 16, 0, 0, Type.None);
+        return new None();
     }
 
     public static Sprite ERR(){
-        return new Sprite(pathRand, 16, 3, 3, Type.ERR);
+        return new ERR();
     }
 
     public static Sprite Brick_Floor(){

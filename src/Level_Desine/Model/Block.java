@@ -40,7 +40,6 @@ public class Block extends Group {
 
 
     public void changeBlock(Sprite sprite) {
-        System.out.println("k");
         this.sprite = Sprites.createNewSprite(sprite.getType());
         renderBlock();
     }
@@ -55,21 +54,8 @@ public class Block extends Group {
         renderBlock();
     }
 
-    public void setIcon() {
-        reSizeBlock(100);
-        renderBlock();
-    }
 
     //--------------------------------
-
-    public Sprite getSprite() {
-        //return new Sprite(sprite.getPath(), sprite.getSize(), sprite.getRow(), sprite.getCol());
-        return sprite;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
 
     public int getWidth() {
         return sprite.getWidth();
