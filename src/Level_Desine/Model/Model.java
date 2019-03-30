@@ -12,8 +12,6 @@ public class Model {
         p = new Pallet();
 
 
-        p.add(Blocks.brickWall());
-
     }
 
     public Pallet getPallet() {

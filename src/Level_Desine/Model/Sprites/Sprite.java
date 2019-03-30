@@ -1,5 +1,6 @@
 package Level_Desine.Model.Sprites;
 
+import Level_Desine.Type;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -11,8 +12,12 @@ public class Sprite extends ImageView{
     private int col;
     private final int width;
     private final int height;
+    private Type type;
 
-    public Sprite(String path, int size, int row, int col) {
+    //Should hava a type and a image(view)
+
+    public Sprite(String path, int size, int row, int col, Type type) {
+        this.type = type;
         this.path = path;
         this.size = size;
         Image img = new Image(path);
@@ -21,6 +26,10 @@ public class Sprite extends ImageView{
 
         this.width = (int) this.getBoundsInParent().getWidth();
         this.height = (int) this.getBoundsInParent().getHeight();
+    }
+
+    public Type getType() {
+        return type;
     }
 
     public int getRow() {

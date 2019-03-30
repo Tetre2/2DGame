@@ -5,6 +5,7 @@ import Level_Desine.Model.Model;
 import Level_Desine.Model.RotatableBlock;
 import Level_Desine.Model.Sprites.Blocks;
 import Level_Desine.Model.Sprites.Sprite;
+import Level_Desine.Model.Sprites.Sprites;
 import Level_Desine.View.View;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
@@ -14,7 +15,7 @@ public class Controller {
     private View view;
     private Model model;
     private RotatableBlock selectedBlcok;
-    private Sprite current = Blocks.ERR().getSprite();
+    private Sprite current = Sprites.ERR();
     private Scene scene;
 
     public Controller(View view, Model model, Scene scene) {

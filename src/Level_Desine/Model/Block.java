@@ -2,6 +2,7 @@ package Level_Desine.Model;
 
 import Level_Desine.Model.Sprites.Blocks;
 import Level_Desine.Model.Sprites.Sprite;
+import Level_Desine.Model.Sprites.Sprites;
 import javafx.scene.Group;
 
 public class Block extends Group {
@@ -38,9 +39,9 @@ public class Block extends Group {
     }
 
 
-    public void changeBlock(Sprite s) {
+    public void changeBlock(Sprite sprite) {
         System.out.println("k");
-        this.sprite = new Sprite(s);
+        this.sprite = Sprites.createNewSprite(sprite.getType());
         renderBlock();
     }
 
