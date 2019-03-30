@@ -6,7 +6,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Sprite extends ImageView{
-    private static String path;
+
+    private String path;
     private int size;
     private int row;
     private int col;
@@ -20,12 +21,18 @@ public class Sprite extends ImageView{
         this.type = type;
         this.path = path;
         this.size = size;
+        this.row = row;
+        this.col = col;
         Image img = new Image(path);
         this.setImage(img);
         this.setViewport(new Rectangle2D(row*size, col*size, size, size));
 
         this.width = (int) this.getBoundsInParent().getWidth();
         this.height = (int) this.getBoundsInParent().getHeight();
+    }
+
+    public Sprite(Sprite s) {
+        this(s.getPath(), s.getSize(), s.getRow(), s.getRow(), s.getType());
     }
 
     public Type getType() {
@@ -40,7 +47,7 @@ public class Sprite extends ImageView{
         return col;
     }
 
-    public static String getPath() {
+    public String getPath() {
         return path;
     }
 

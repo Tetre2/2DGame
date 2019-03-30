@@ -1,16 +1,19 @@
 package Level_Desine.Model;
 
-import Level_Desine.Model.Sprites.Blocks;
 
 public class Model {
 
     private Canvas c;
     private Pallet p;
+    private Types types;
 
     public Model(int size) {
         c = new Canvas(size);
         p = new Pallet();
+        types = new Types();
 
+
+        p.add(new RotatableBlock(types.getBrickWallTypes()));
 
     }
 

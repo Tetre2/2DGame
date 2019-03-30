@@ -27,10 +27,6 @@ public class Block extends Group {
         this(sprite, 0, 0, 0);
     }
 
-    /*public Block(Block b) {
-        this(b.sprite, b.size, b.getPosX(), b.getPosY());
-    }*/
-
     //--------------------------------
 
     public void renderBlock() {
@@ -39,8 +35,9 @@ public class Block extends Group {
     }
 
 
-    public void changeBlock(Sprite sprite) {
+    public void changeBlock(Sprite sprite) {//får in en ERR
         this.sprite = Sprites.createNewSprite(sprite.getType());
+        //System.out.println("Block:      "+ this.sprite.getPath() + " | " + this.sprite.getSize() + " | " + this.sprite.getRow() + " | " + this.sprite.getCol() + " | " + this.sprite.getType());
         renderBlock();
     }
 
@@ -56,6 +53,11 @@ public class Block extends Group {
 
 
     //--------------------------------
+
+
+    public Sprite getSprite() {
+        return sprite;
+    }
 
     public int getWidth() {
         return sprite.getWidth();

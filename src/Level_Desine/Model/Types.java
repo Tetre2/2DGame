@@ -24,6 +24,10 @@ public class Types {
 
     }
 
+    public List<Type> getBrickWallTypes(){
+        return Brick_Walls;
+    }
+
 
 
 

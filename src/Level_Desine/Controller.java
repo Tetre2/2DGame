@@ -29,6 +29,8 @@ public class Controller {
     private void initLisner(){
         model.getCanvas().addEventFilter(MouseEvent.MOUSE_PRESSED, e -> {
             Block b = ((Block) ((Sprite) e.getTarget() ).getParent());
+            Sprite s = b.getSprite();
+            //System.out.println("Controller: "+ s.getPath() + " | " + s.getSize() + " | " + s.getRow() + " | " + s.getCol() + " | " + s.getType());
             b.changeBlock(current);
         });
 
