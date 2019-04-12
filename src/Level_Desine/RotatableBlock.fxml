@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane style="-fx-border-radius: 5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Level_Desine.Model.RotatableBlock">
+   <children>
+      <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="-36.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+         <image>
+            <Image url="@res/BRICK16.png" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="170.0" prefWidth="134.0" style="-fx-border-color: Black; -fx-border-radius: 5;" />
+      <Button layoutX="3.0" layoutY="135.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="44.0">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/arrowLeft.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="87.0" layoutY="135.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="44.0">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/arrowRight.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

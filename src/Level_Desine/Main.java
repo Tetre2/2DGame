@@ -1,15 +1,33 @@
 package Level_Desine;
-import Level_Desine.Model.Block;
-import Level_Desine.Model.Model;
-import Level_Desine.Model.Sprites.Blocks;
-import Level_Desine.View.View;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.ResourceBundle;
+
 
 public class Main extends Application{
+
+
+
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
+
+        Scene scene = new Scene(root, 800, 500);
+
+        stage.setTitle("HEJ");
+        stage.setScene(scene);
+        stage.show();
+
+
+
+    /*
     public static int WORLD_WIDTH = 1200;
     public static int WORLD_HEIGHT = 800;
 
@@ -31,17 +49,17 @@ public class Main extends Application{
         root.getChildren().add(m.getCanvas());
         root.getChildren().add(m.getPallet());
 
-        /*Block b = new Block(Blocks.None().getSprite());
+        *//*Block b = new Block(Blocks.None().getSprite());
         root.getChildren().add(b);
         b.changeBlock(Blocks.ERR().getSprite());
         root.getChildren().clear();
-        root.getChildren().add(b);*/
+        root.getChildren().add(b);*//*
 
         //root.getChildren().add(Blocks.brickWall());
 
         primaryStage.setScene(scene);
         primaryStage.show();
-
+*/
 
     }
 
@@ -49,12 +67,12 @@ public class Main extends Application{
         launch(args);
     }
 
-    public static Stage getPrimaryStage() {
+   /* public static Stage getPrimaryStage() {
         return pStage;
     }
 
     private void setPrimaryStage(Stage pStage) {
         Main.pStage = pStage;
     }
-
+*/
 }
